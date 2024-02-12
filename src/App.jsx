@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css'
+
 function AgeCalculator() {
   const [birthdate, setBirthdate] = useState('');
   const [age, setAge] = useState('');
@@ -27,16 +28,28 @@ function AgeCalculator() {
     setAge(`${years} years, ${months} months, ${days} days old`);
   };
   return (
-    <div>
-      <h2>Age Calculator</h2>
+    <>
+  <header>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <head>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      </head>
+      </header>
+    <div className="m-5 d-flex flex-column align-items-center justify-content-center" >
+      
+      <h1 className="text-primary m-4 ">Age Calculator</h1>
+      
       <input
         type="date"
         value={birthdate}
         onChange={(e) => setBirthdate(e.target.value)}
       />
-      <button onClick={calculateAge}>Calculate Age</button>
+      <button onClick={calculateAge} className="m-3 btn btn-outline-primary">Calculate Age</button>
       {age && <p>You are {age}</p>}
     </div>
+    </>
   );
 }
 
